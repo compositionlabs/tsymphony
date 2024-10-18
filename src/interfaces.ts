@@ -6,9 +6,9 @@ interface GenerateWorkflowRequest {
 
 interface AddWorkflowToolRequest {
     unique_id: string;
-    name: string;
     description: string;
-    schema: Record<string, any>;
+    name?: string;
+    schema?: Record<string, any>;
 }
 
 interface WorkflowTool {
@@ -63,14 +63,14 @@ interface InitRunResponse {
 
 interface RunStepRequest {
     run_id: string;
-    tool_calls: Array<any>;
+    tool_calls: Record<string, any>;
 }
 
 interface RunStepResponse {
     run_id: string;
     input: string;
     status: string;
-    tool_calls: Array<any>;
+    tool_calls: Record<string, any>;
     ios: Record<string, any>;
 }
 
